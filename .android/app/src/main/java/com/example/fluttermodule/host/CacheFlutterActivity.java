@@ -17,7 +17,7 @@ public class CacheFlutterActivity extends FlutterActivity {
   @Override
   public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
     GeneratedPluginRegistrant.registerWith(flutterEngine);
-    new MethodChannel(flutterEngine.getDartExecutor(), "start_activity").setMethodCallHandler(
+    new MethodChannel(flutterEngine.getDartExecutor(), "start_cache_activity").setMethodCallHandler(
             new MethodChannel.MethodCallHandler() {
               @Override
               public void onMethodCall(MethodCall call, MethodChannel.Result result) {
@@ -44,5 +44,10 @@ public class CacheFlutterActivity extends FlutterActivity {
   @Override
   public String getInitialRoute() {
     return "/cache";
+  }
+
+  @Override
+  public void onBackPressed() {
+    finish();
   }
 }

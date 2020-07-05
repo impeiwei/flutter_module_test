@@ -7,7 +7,7 @@ import io.flutter.embedding.engine.FlutterEngine;
 import io.flutter.embedding.engine.FlutterEngineCache;
 import io.flutter.embedding.engine.dart.DartExecutor;
 
-public class MyApplication extends FlutterApplication {
+public class MyApplication extends Application {
   @Override
   public void onCreate() {
     super.onCreate();

@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 
 class FirstRouteWidget extends StatelessWidget {
 
-  static const MethodChannel methodChannel = MethodChannel('start_activity');
+  static const MethodChannel methodChannel = MethodChannel('start_cache_activity');
 
 
   @override

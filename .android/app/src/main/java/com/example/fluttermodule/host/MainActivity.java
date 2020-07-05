@@ -1,37 +1,29 @@
 package com.example.fluttermodule.host;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import io.flutter.embedding.android.FlutterActivity;
 import io.flutter.embedding.engine.FlutterEngine;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugins.GeneratedPluginRegistrant;
 
-public class MainActivity extends FlutterActivity {
+public class MainActivity extends Activity {
 
   @Override
-  public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
-    GeneratedPluginRegistrant.registerWith(flutterEngine);
-
-
-    new MethodChannel(flutterEngine.getDartExecutor(), "start_activity").setMethodCallHandler(
-            new MethodChannel.MethodCallHandler() {
-              @Override
-              public void onMethodCall(MethodCall call, MethodChannel.Result result) {
-                if (call.method.equals("startActivity")) {
-                  Intent intent = new Intent(MainActivity.this, CacheFlutterActivity.class);
-                  startActivity(intent);
-
-                } else {
-                  result.notImplemented();
-                }
-              }
-            }
-    );
-
+  protected void onCreate(@Nullable Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.main);
   }
 
-
+  public void onClick(View view) {
+    Intent intent = new Intent(MainActivity.this, CacheFlutterActivity.class);
+    startActivity(intent);
+  }
 }
