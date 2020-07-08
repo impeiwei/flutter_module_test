@@ -7,3 +7,6 @@ evaluate(new File(settingsDir, 'include_flutter.groovy'))
 
 include ':flutter_module'
 project(':flutter_module').projectDir = new File('../../flutter_module')
+
+include ':flutter_module_test'
+project(':flutter_module_test').projectDir = new File('../../flutter_module_test')

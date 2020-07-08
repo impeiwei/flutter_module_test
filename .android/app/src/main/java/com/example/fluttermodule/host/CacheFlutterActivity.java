@@ -35,6 +35,11 @@ public class CacheFlutterActivity extends FlutterActivity {
   }
 
   @Override
+  protected void onResume() {
+    super.onResume();
+  }
+
+  @Override
   public FlutterEngine provideFlutterEngine(Context context) {
     return FlutterEngineCache
             .getInstance()
