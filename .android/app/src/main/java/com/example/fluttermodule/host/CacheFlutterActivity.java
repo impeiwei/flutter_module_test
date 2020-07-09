@@ -5,14 +5,16 @@ import android.content.Intent;
 
 import androidx.annotation.NonNull;
 
-import io.flutter.embedding.android.FlutterActivity;
+import com.example.fluttermodule.custom.XFlutterActivity;
+
+//import io.flutter.embedding.android.FlutterActivity;
 import io.flutter.embedding.engine.FlutterEngine;
 import io.flutter.embedding.engine.FlutterEngineCache;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugins.GeneratedPluginRegistrant;
 
-public class CacheFlutterActivity extends FlutterActivity {
+public class CacheFlutterActivity extends XFlutterActivity {
 
   @Override
   public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
